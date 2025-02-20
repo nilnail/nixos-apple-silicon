@@ -25,7 +25,7 @@
   in lib.mkIf (cfg.setupAsahiSound && cfg.enable) (lib.mkMerge [
     {
       # can't be used by Asahi sound infrastructure
-      services.pulseaudio.enable = false;
+      hardware.pulseaudio.enable = false;
       # enable pipewire to run real-time and avoid audible glitches
       security.rtkit.enable = true;
       # set up pipewire with the supported capabilities (instead of pulseaudio)
